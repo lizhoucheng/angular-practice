@@ -1,0 +1,64 @@
+<div [@dialog] *ngIf="visible" class="dialog">
+    <!-- <ng-content></ng-content> -->
+    <div id="header">
+        <span>tenfold</span>
+        <button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog_close-btn">X</button>
+    </div>
+    <div id="callingInfo">
+        <div class="item1">
+            <img src="assets/images/back-arrow.png" style="width: 20px; height: 20px;"/>
+            <button id="callHistoryBtn">CALLS HISTORY</button>
+            <!-- <a href="#" class="previous">&laquo; CALLS HISTORY</a> -->
+        </div>
+        <div class="item2" style="text-align: right;">
+            <span id="inCallText" style="background-color: greenyellow;">IN CALL</span>
+            <br/>
+            <span id="outboundCallText" style="background-color: lightgray">OUTBOUND CALL</span>
+        </div>
+        <div class="item3">
+            <span id="callDuration">00:03:57</span>
+        </div>
+        <div class="item4">
+            <button id="callBtn"></button>
+        </div>
+    </div>
+    <div id="personalInfo">
+        <div style="grid-column: 1; grid-row: 1/5; text-align: center">
+            <img src="assets/images/person.jpg"/>
+            <br/>
+            <img src="assets/images/callout.jpg"/>
+        </div>
+        <div style="grid-column: 2; grid-row: 1">Shirley Thomas</div>
+        <div style="grid-column: 3; grid-row: 1; text-align: center; color: darkcyan; text-decoration: darkcyan underline">+1(234) 123 123</div>
+        <div style="grid-column: 2/span 2; grid-row: 2; padding-top: 5%;">Marketing Executive, Inform Group Pty Ltd, Philippines, Cosmetics</div>
+        <div style="grid-column: 2/span 2; grid-row: 3; text-decoration: underline;"><a>LinkdIn</a>, <a>Facebook</a>, <a>Twitter</a>, <a>+Add Field</a></div>
+        <div style="grid-column: 2; grid-row: 4/5;padding-top: 20%;">
+            <span style="background-color: lightgrey">OUTBOUND CALL</span>
+            <br />
+            <img src="assets/images/clock.jpg" />
+            <span>4 DAYS AGO</span>
+        </div>
+        <div style="grid-column: 3; grid-row: 4/5; padding-top: 10%;">
+            CALLS HISTORY
+            <br />
+            <button>
+                <img src="assets/images/note1.jpg" />
+                <br/>
+                <span>1 Follow Up</span>
+            </button>
+            <button>
+                <img src="assets/images/note2.jpg" />
+                <br/>
+                <span>3 notes</span>
+            </button>
+        </div>
+    </div>
+    <div id="registers" style="background-color: lightslategray">
+        <p style="text-align: center;">SHOW MORE REGISTERS FROM SHIRLEY</p>
+        <div>
+            <span style="display: inline-block; width:80%;vertical-align: middle">Budget is finally avaible! needs to pull in some other decision makers. Followup next week.</span>
+            <button style="display: inline-block; width: 15%; height: 50px; text-align: center; background-color: lightblue; border-radius: 2px; vertical-align: middle;">SAVE</button>
+        </div>
+    </div>
+</div>
+<!-- <div *ngIf="visible" class="overlay" (click)="close()"></div> -->

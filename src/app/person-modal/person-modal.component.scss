@@ -1,0 +1,93 @@
+img {
+    border-radius: 50%;
+    border: 2px solid lightgray;
+}
+
+button {
+    background-color: white;
+    border: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right:0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.dialog {
+    z-index: 1000;
+    position:fixed;
+    right: 0;
+    left: 0;
+    top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    min-height: 200px;
+    width: 700px;
+    // max-width: 520px;
+    background-color: #fff;
+    padding: 12px;
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 13px 19px 2px rgba(0, 0, 0, 0.14), 0 5px 24px 4px rgba(0, 0, 0, 0.12);
+}
+
+#callBtn {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid lightgray;
+    background-image: url('../../assets/images/phone.jpg');
+    background-repeat:no-repeat;
+}
+
+#callingInfo {
+    display: grid;
+    grid-template-rows: 30% 40% 20% 10%;
+}
+
+#personalInfo {
+    display: grid;
+    grid-column: 33% 33% 33%;
+    grid-row: 14% 10% 10% 10% 10%;
+}
+
+.item1 {
+    grid-column: 1;
+    vertical-align: middle;
+}
+
+.item2{
+    grid-column: 2;
+}
+
+#callDuration {
+    float: right;
+    font-size: xx-large;
+}
+
+.item3 {
+    grid-column: 3;
+}
+
+.item4 {
+    grid-column: 4;
+}
+
+@media (min-width: 768px) {
+    .dialog {
+      top: 40px;
+    }
+  }
+
+  .dialog_close-btn {
+      border: 0;
+      background: none;
+      color: #2d2d2d;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-size: 1.2em;
+  }

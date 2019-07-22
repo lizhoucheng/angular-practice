@@ -6,20 +6,22 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   templateUrl: './person-modal.component.html',
   styleUrls: ['./person-modal.component.scss'],
   animations: [
-    trigger('dialog', [
+    trigger('modal', [
       transition('void => *', [
-        style({ transform: 'scale3d(.3, .3, .3)' }),
+        style({
+        left: "100%" }),
         animate(100)
       ]),
       transition('* => void', [
-        animate(100, style({ transform: 'scale3d(.0, .0, .0)' }))
+        animate(100, style({
+        left: "100%" }))
       ])
     ])
   ]
 })
 export class PersonModalComponent implements OnInit {
-  @Input() closable = true;
   @Input() visible: boolean;
+  @Input() person: Object;
   @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() { }

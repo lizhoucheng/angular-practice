@@ -1,8 +1,8 @@
-<div [@dialog] *ngIf="visible" class="dialog">
+<div [@modal]="visible ? open : closed" *ngIf="visible" class="dialog">
     <!-- <ng-content></ng-content> -->
     <div id="header">
         <span>tenfold</span>
-        <button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog_close-btn">X</button>
+        <button (click)="close()" aria-label="Close" class="dialog_close-btn">X</button>
     </div>
     <div id="callingInfo">
         <div class="item1">
@@ -16,7 +16,7 @@
             <span id="outboundCallText" style="background-color: lightgray">OUTBOUND CALL</span>
         </div>
         <div class="item3">
-            <span id="callDuration">00:03:57</span>
+            <span id="callDuration">{{person.callDuration}}</span>
         </div>
         <div class="item4">
             <button id="callBtn"></button>
@@ -28,15 +28,15 @@
             <br/>
             <img src="assets/images/callout.jpg"/>
         </div>
-        <div style="grid-column: 2; grid-row: 1">Shirley Thomas</div>
-        <div style="grid-column: 3; grid-row: 1; text-align: center; color: darkcyan; text-decoration: darkcyan underline">+1(234) 123 123</div>
-        <div style="grid-column: 2/span 2; grid-row: 2; padding-top: 5%;">Marketing Executive, Inform Group Pty Ltd, Philippines, Cosmetics</div>
-        <div style="grid-column: 2/span 2; grid-row: 3; text-decoration: underline;"><a>LinkdIn</a>, <a>Facebook</a>, <a>Twitter</a>, <a>+Add Field</a></div>
+        <div style="grid-column: 2; grid-row: 1">{{(person.firstName + ' ' + person.lastName) || "none"}}</div>
+        <div style="grid-column: 3; grid-row: 1; text-align: center; color: darkcyan; text-decoration: darkcyan underline">{{person.numsber || "none"}}</div>
+        <div style="grid-column: 2/span 2; grid-row: 2; padding-top: 5%;">{{person.intro}}</div>
+        <div style="grid-column: 2/span 2; grid-row: 3; text-decoration: underline;"><span *ngFor="let medium of person.socialMedia"><a>{{medium.name}}</a>,</span><a>+Add Field</a></div>
         <div style="grid-column: 2; grid-row: 4/5;padding-top: 20%;">
-            <span style="background-color: lightgrey">OUTBOUND CALL</span>
+            <span style="background-color: lightgrey">{{person.previousCall.type || "none"}}</span>
             <br />
             <img src="assets/images/clock.jpg" />
-            <span>4 DAYS AGO</span>
+            <span>{{person.previousCall.time || "none"}}</span>
         </div>
         <div style="grid-column: 3; grid-row: 4/5; padding-top: 10%;">
             CALLS HISTORY
@@ -44,19 +44,19 @@
             <button>
                 <img src="assets/images/note1.jpg" />
                 <br/>
-                <span>1 Follow Up</span>
+                <span>{{person.callHistory.followup || 0}} Follow Up</span>
             </button>
             <button>
                 <img src="assets/images/note2.jpg" />
                 <br/>
-                <span>3 notes</span>
+                <span>{{person.callHistory.note || 0}} notes</span>
             </button>
         </div>
     </div>
     <div id="registers" style="background-color: lightslategray">
-        <p style="text-align: center;">SHOW MORE REGISTERS FROM SHIRLEY</p>
+        <p style="text-align: center;">SHOW MORE REGISTERS FROM {{person.firstName || "none"}}</p>
         <div>
-            <span style="display: inline-block; width:80%;vertical-align: middle">Budget is finally avaible! needs to pull in some other decision makers. Followup next week.</span>
+            <span style="display: inline-block; width:80%;vertical-align: middle">{{person.register.content || "none"}}</span>
             <button style="display: inline-block; width: 15%; height: 50px; text-align: center; background-color: lightblue; border-radius: 2px; vertical-align: middle;">SAVE</button>
         </div>
     </div>

@@ -1,0 +1,34 @@
+{
+    "firstName": "Sherley",
+    "lastName": "mays",
+    "avatar": "xxx.com",
+    "number": "+1(234) 123 123",
+    "callType": "incall",
+    "callDuration": "00:03:57",
+    "intro": "Marketing Executive, Inform Group Pty Ltd, Philippines, Cosmetics",
+    "socialMedia": [
+      {
+        "name": "Facebook",
+        "url": "google.com"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "youtube.com"
+      },
+      {
+        "name": "Twitter",
+        "url": "github.com"
+      }
+    ],
+    "previousCall": {
+      "type": "OUTBOUND CALL",
+      "time": "4 DAYS AGO"
+    },
+    "callHistory": {
+      "followup": 1,
+      "note": 3
+    },
+    "register": {
+      "content": "Budget is finally avaible! needs to pull in some other decision makers. Followup next week."
+    }
+}

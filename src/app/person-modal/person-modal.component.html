@@ -7,7 +7,7 @@
     <div id="calling-info">
         <div id="go-back">
             <img src="assets/images/back-arrow.png"/>
-            <button id="callHistoryBtn">CALLS HISTORY</button>
+            <button id="callHistoryBtn" (click)="callHistoryBtnClicked()">CALLS HISTORY</button>
         </div>
         <div id="call-type">
             <span id="inCallText" [ngStyle]="{'background-color': person.callType.toLowerCase().includes('incall') ? 'greenyellow' : 'lightgray'}">IN CALL</span>
@@ -28,7 +28,7 @@
             <br/>
             <img src="assets/images/callout.jpg"/>
         </div>
-        <div id="name">{{(person.firstName + ' ' + person.lastName) || "none"}}</div>
+        <div id="name"><span id="dot"></span> {{(person.firstName + ' ' + person.lastName) || "none"}}</div>
         <div id="phone-number">{{person.number || "none"}}</div>
         <div id="intro">{{person.intro}}</div>
         <div id="social-media"><span *ngFor="let medium of person.socialMedia"><a>{{medium.name}}</a>,</span><a>+Add Field</a></div>

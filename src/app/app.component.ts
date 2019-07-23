@@ -13,4 +13,8 @@ export class AppComponent {
   ngOnInit() {
     this.person = PersonData;
   }
+
+  handleCallHistoryEvent() {
+    console.log("go to call history");
+  }
 }

@@ -23,10 +23,15 @@ export class PersonModalComponent implements OnInit {
   @Input() visible: boolean;
   @Input() person: Object;
   @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() callHistory = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() { }
+
+  callHistoryBtnClicked() {
+    this.callHistory.emit();
+  }
 
   close() {
     this.visible = false;

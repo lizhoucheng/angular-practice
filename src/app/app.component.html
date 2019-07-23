@@ -1,3 +1,3 @@
 <button (click)="showPersonModal = !showPersonModal">popup</button>
 
-<app-person-modal [(visible)]="showPersonModal" [person]="person"></app-person-modal>
+<app-person-modal [(visible)]="showPersonModal" [person]="person" (callHistory)="handleCallHistoryEvent()"></app-person-modal>

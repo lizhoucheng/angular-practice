@@ -15,10 +15,10 @@
             <span id="outboundCallText" [ngStyle]="{'background-color': person.callType.toLowerCase().includes('incall') ? 'lightgray' : 'greenyellow'}">OUTBOUND CALL</span>
         </div>
         <div class="item3">
-            <span id="call-duration">{{person.callDuration}}</span>
+            <span id="call-duration" #callDuration>{{person.callDuration | amParse: 'HH:mm:ss' | amAdd: diff : 'seconds' | amDateFormat:'HH:mm:ss'}}</span>
         </div>
         <div class="item4">
-            <button id="call-btn"></button>
+            <button id="call-btn" (click)="incallBtnClicked()"></button>
         </div>
     </div>
 

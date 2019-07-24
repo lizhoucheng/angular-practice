@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PersonModalComponent } from './person-modal/person-modal.component';
 
+import { MomentModule } from 'ngx-moment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +16,8 @@ import { PersonModalComponent } from './person-modal/person-modal.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MomentModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

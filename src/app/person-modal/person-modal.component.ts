@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Component, ViewChild, OnInit, Input, Output, ElementRef, EventEmitter} from '@angular/core';
+import { trigger, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-person-modal',
@@ -22,15 +22,29 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export class PersonModalComponent implements OnInit {
   @Input() visible: boolean;
   @Input() person: Object;
+  @Input() diff = 0;
   @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() callHistory = new EventEmitter();
+  @Output() incallEvent = new EventEmitter();
 
-  constructor() { }
+  callDurationHolder: ElementRef;
 
-  ngOnInit() { }
+  @ViewChild('callDuration', null) set content(content: ElementRef) {
+    this.callDurationHolder = content;
+  }
+
+  constructor() {
+  }
+
+  ngOnInit() {     
+  }
 
   callHistoryBtnClicked() {
     this.callHistory.emit();
+  }
+
+  incallBtnClicked() {
+    this.incallEvent.emit(this.callDurationHolder.nativeElement.innerText);
   }
 
   close() {
